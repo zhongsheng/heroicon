@@ -49,8 +49,8 @@ module Heroicon
     end
 
     class << self
-      def render(*args)
-        new(*args).render
+      def render(...)
+        new(...).render
       end
     end
   end
