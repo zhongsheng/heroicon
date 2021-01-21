@@ -31,7 +31,8 @@ module Heroicon
     end
 
     def file
-      @file ||= Rails.application.assets.find_asset("heroicon/#{variant}/#{name}.svg").source.force_encoding("UTF-8")
+      assets = ::Sprockets::Railtie.build_environment(Rails.application)
+      @file ||= assets.find_asset("heroicon/#{variant}/#{name}.svg").source.force_encoding("UTF-8")
     rescue
       nil
     end
